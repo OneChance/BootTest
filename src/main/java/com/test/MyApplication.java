@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -81,20 +80,6 @@ public class MyApplication {
 						throws Exception {
 					request.getContextPath();
 
-					/*String local = "";
-
-					Locale locale = LocaleContextHolder.getLocale();
-
-					if (local != null && !local.equals("")) {
-						if (local.equals("zh")) {
-							locale = new Locale("zh", "CN");
-						} else if (local.equals("en")) {
-							locale = new Locale("en", "US");
-						}
-					}
-
-					request.getSession().setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, locale);
-*/
 					return true;
 				}
 			}).addPathPatterns("/*");
