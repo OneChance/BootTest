@@ -15,14 +15,10 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 public class MyController {
 	@RequestMapping("/")
 	public String index(HttpServletRequest request) {
-
 		String name = "";
-
 		// name = accountService.getAccount().get(0).getName();
-
 		name = accountRepository.findAll().get(0).getName();
-
-		request.setAttribute("user", name);
+		request.setAttribute("name", name);
 		return "index";
 	}
 
